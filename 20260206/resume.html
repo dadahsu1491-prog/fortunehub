@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== 基礎 ===== */
+
+body{
+    margin:0;
+    background:#f5f2ee;
+    font-family:'Noto Sans TC', sans-serif;
+}
+
+.resume{
+    width:210mm;
+    min-height:297mm;
+    margin:auto;
+    background:white;
+    display:flex;
+}
+
+/* ===== 左欄 ===== */
+
+.sidebar{
+    width:32%;
+    background:#f1ece6;
+    padding:34px 26px;
+    box-sizing:border-box;
+}
+
+.name{
+    font-family:'Noto Serif TC';
+    font-size:26px;
+    margin-bottom:6px;
+}
+
+.title{
+    font-size:14px;
+    color:#666;
+    margin-bottom:26px;
+}
+
+.section{
+    margin-bottom:28px;
+}
+
+.section h3{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.section ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.section li{
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+/* ===== icon ===== */
+
+.icon{
+    width:14px;
+    height:14px;
+    fill:#444;
+}
+
+/* ===== 技能條 ===== */
+
+.skill{
+    margin-bottom:10px;
+}
+
+.skill-name{
+    font-size:12px;
+}
+
+.bar{
+    height:6px;
+    background:#ddd;
+    border-radius:4px;
+    overflow:hidden;
+}
+
+.level{
+    height:100%;
+    background:#333;
+}
+
+/* ===== 右欄 ===== */
+
+.content{
+    width:68%;
+    padding:36px 44px;
+}
+
+.content h2{
+    font-size:17px;
+    border-left:4px solid #333;
+    padding-left:10px;
+    margin-bottom:10px;
+}
+
+.content p{
+    font-size:13px;
+    line-height:1.7;
+}
+
+.job{
+    margin-bottom:20px;
+}
+
+.job-title{
+    font-size:14px;
+    font-weight:600;
+}
+
+.job-date{
+    font-size:12px;
+    color:#777;
+    margin-bottom:6px;
+}
+
+.job ul{
+    margin:6px 0 0 18px;
+}
+
+.job li{
+    font-size:13px;
+    margin-bottom:4px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="resume">
+
+<!-- 左欄 -->
+
+<div class="sidebar">
+
+<div class="name">徐政達</div>
+<div class="title">UX/UI Designer with Frontend Skills</div>
+
+<div class="section">
+
+<h3>
+
+<svg class="icon" viewBox="0 0 24 24">
+<path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM2 22c0-5 4-8 10-8s10 3 10 8"/>
+</svg>
+
+CONTACT
+
+</h3>
+
+<ul>
+<li>email@example.com</li>
+<li>Portfolio</li>
+<li>LinkedIn</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h3>
+
+<svg class="icon" viewBox="0 0 24 24">
+<path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/>
+</svg>
+
+SKILLS
+
+</h3>
+
+<div class="skill">
+<div class="skill-name">UX / UI Design</div>
+<div class="bar"><div class="level" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Design System</div>
+<div class="bar"><div class="level" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Figma</div>
+<div class="bar"><div class="level" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">HTML / CSS</div>
+<div class="bar"><div class="level" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Vue.js</div>
+<div class="bar"><div class="level" style="width:65%"></div></div>
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>
+
+<svg class="icon" viewBox="0 0 24 24">
+<path d="M12 2l4 8h8l-6 6 2 8-8-5-8 5 2-8-6-6h8z"/>
+</svg>
+
+TOOLS
+
+</h3>
+
+<ul>
+<li>Figma</li>
+<li>Illustrator</li>
+<li>Photoshop</li>
+<li>InDesign</li>
+<li>Vue.js</li>
+<li>HTML / CSS / SCSS</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h3>
+
+<svg class="icon" viewBox="0 0 24 24">
+<path d="M12 2l3 7h7l-5 5 2 8-7-4-7 4 2-8-5-5h7z"/>
+</svg>
+
+AI WORKFLOW
+
+</h3>
+
+<ul>
+<li>Midjourney</li>
+<li>Stable Diffusion</li>
+<li>Prompt Engineering</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- 右欄 -->
+
+<div class="content">
+
+<h2>Professional Summary</h2>
+
+<p>
+國立臺灣師範大學設計碩士，具備 10 年視覺藝術與設計背景。
+擅長將藝術美學轉譯為結構化的數位產品體驗，
+結合 UI 設計與前端實作能力（Vue.js / HTML / CSS），
+建立具一致性與可擴充性的 Design System，
+提升設計與開發之間的溝通效率。
+</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+
+<div class="job-title">永和國民中學｜視覺藝術教師</div>
+<div class="job-date">2025 – Present</div>
+
+<ul>
+<li>將抽象美學概念轉譯為結構化課程模組</li>
+<li>優化教材資訊架構與呈現方式</li>
+<li>累積 300+ 使用者互動觀察經驗</li>
+</ul>
+
+</div>
+
+<div class="job">
+
+<div class="job-title">智網通科技公司｜視覺美術</div>
+
+<ul>
+<li>負責科技產品視覺設計與品牌形象建立</li>
+<li>將複雜技術資訊轉譯為清晰圖像</li>
+<li>建立一致的產品視覺規範</li>
+</ul>
+
+</div>
+
+<h2>Awards</h2>
+
+<p>
+IHOOC Contemporary Illustration Competition — Gold Award  
+<br>
+Michigan Elite Design Competition — Champion
+</p>
+
+<h2>Exhibitions</h2>
+
+<p>
+《世之彩》 個展  
+<br>
+《日跡》 個展
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

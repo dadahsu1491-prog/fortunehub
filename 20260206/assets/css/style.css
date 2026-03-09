@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+
+/* ======================= */
+/* Reset & 基本設定 */
+/* ======================= */
+html, body, header, footer, nav, main,
+h1, h2, h3, h4, a, img, p, div, span,
+aside, article, menu, ul, ol, li, button{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif TC", serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto; /* 保持比例 */
+    vertical-align: bottom;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(../images/background.png) center/cover no-repeat;
+}
+
+/* ======================= */
+/* Root 變數 */
+/* ======================= */
+:root {
+    --textblack--: #2b2b2b;
+    --textAction--: #BE8C71;
+    --textWhite--: #FFF8F6;
+    --textGray--: #D9D9D9;
+    --textDark--: #182128;
+    --alphaBlack: #00000088;
+    --transition--: all 600ms ease;
+    --shadow--: 5px 3px 3px #242323e5;
+}
+
+/* Flex 通用 */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* =======================Header============================*/
+header.flex {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    letter-spacing: clamp(1em, 4vw, 5em);
+    color: var(--textWhite--);
+    text-shadow: var(--shadow--);
+}
+header.flex h1{
+    font-size: clamp(1.6em, 3vw, 3.8em);
+    position: relative;
+    /* padding: 2vw 7vw 2vw 10vw; */
+    padding: 
+    clamp(10px, 2vw, 20px)
+    clamp(20px, 7vw, 30px)
+    clamp(10px, 2vw, 20px)
+    clamp(30px, 10vw, 60px);
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    z-index: 1;
+}
+header.flex h1::before {
+    content: "";
+    position: absolute;
+    inset: -20px;  /* 擴大範圍 */
+    background: rgba(255,255,255,0.2);
+    filter: blur(25px);
+    border-radius: 30px;
+    z-index: -1;
+}
+
+
+/* ====================Main (Slider 區域)======================== */
+
+main#home.flex {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Slider 容器 */
+main#home .box {
+    width: clamp(90px, 30vw, 150px); /* 手機自適應，大螢幕用 media query 調整 */
+    display: flex;
+    position: relative;
+    overflow: hidden; /* 只顯示一張 */
+}
+
+/* Slider 內部全部圖片 */
+main#home .box .full {
+    display: flex;
+    width: 300%; /* 三張圖片 */
+    justify-content: flex-start;
+    transition: var(--transition--);
+}
+
+/* 單張 a 元素 */
+main#home .box .full a {
+    flex: 0 0 100%; /* 每張圖片佔滿容器 */
+    position: relative;
+    display: block;
+}
+
+/* Slider 左右箭頭 */
+main#home .box #prev,main#home .box #next {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    font-size: clamp(30px, 6vw, 60px);
+    color: #777;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition--);
+
+}
+main#home .box #prev { left: 0; }
+main#home .box #next { right: 0; }
+.box #prev:hover, .box #next:hover {
+    color: var(--textWhite--);
+}
+
+/* 單張圖片容器 */
+main#home .box .item {
+    flex: 0 0 100%; /*每張圖片單獨顯示*/
+    position: relative;
+}
+
+/* 單張圖片標題 */
+main#home .box .item h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    font-size: clamp(1em, 3vw, 1.3em);      /* 字體大小響應式 */
+    line-height: clamp(2em, 5vw, 2.2em); 
+    text-align: center;
+    background: #be8c71a3;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 999px;
+    color: var(--textWhite--);
+}
+
+/* ====================分頁設計=================== */
+header ul {
+    width: 100%;
+    line-height: 20vh;
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    background-color: #182128ac;
+    backdrop-filter: blur(3px);
+    color: var(--textWhite--);
+    font-weight: 700;
+}
+header ul li{
+    margin: 0 1em;
+}
+header ul li a{
+    padding: 0.5em 0.6em;
+    font-size: 0.8em;
+    line-height: 2em;
+    border: 2px solid #c4c4c4;
+    color: var(--textGray--);
+    border-radius: 999px;
+    box-shadow: var(--shadow--);
+    transition: var(--transition--);
+}
+
+header ul li a:hover{
+    filter: brightness(1.5);
+}
+header ul li a:active{
+    box-shadow: --shadow-- inset;
+}
+header ul li a.action{
+    color: var(--textAction--);
+    border:2px solid var(--textAction--);
+}
+main#draw{
+    width: 100%;
+    margin: auto;
+    /* height: calc(70vh - 50px); */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+main#draw .box{
+    width: clamp(250px, 50vw, 350px);
+    font-size: clamp(19px, 3vw, 22px);
+    text-align: center;
+    line-height: 2em;
+    color: var(--textWhite--);
+    letter-spacing: 0.2em;
+}
+main#draw .box h1{
+    font-size: clamp(1.5em, 3vw, 2em);
+}
+main#draw .box ol li{
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition--);
+}
+main#draw .box ol li:hover{
+    background-color: #be8c71c9;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 999px;
+    color: var(--textWhite--);
+    transform: scale(1.1);
+}
+main#draw #btn{
+    width: 70%;
+    margin-top: 1em;
+    height: clamp(2em, 10vw, 3em);
+    font-size: 0.8em;
+    background-color: var(--textAction--);
+    color: var(--textDark--);
+    border-radius: 999px;
+    box-shadow: 
+    inset 2px 2px 6px rgba(0, 0, 0, 0.06),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.6);
+    font-weight: 800;
+    letter-spacing: 0.3em;
+}
+main#draw .box #result{
+    text-align: justify;
+    font-size: clamp(0.8em, 2vw, 0.9em);
+    line-height: clamp(1.7em, 3em, 2em);
+    padding: 0 1em;
+    background-color: #182128b9;
+    backdrop-filter: blur(2px);
+    border-radius: 1em;
+    letter-spacing: 2px;
+}
+main#draw .box #result.none{
+    display: none;
+}
+main#draw .box ol .item.active{
+    transform: scale(1.2);
+    background-color: #da7945cb;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 999px;
+}
+
+
+/* ======================= */
+/* Footer */
+/* ======================= */
+
+footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: var(--textDark--);
+    color: var(--textWhite--);
+    position: absolute;
+    bottom: 0;
+}
+footer p{
+    opacity: 0.4;
+    letter-spacing: 0.04em;
+    font-size: 0.6em;
+}
+/* ======================= */
+/* Loading Layer */
+/* ======================= */
+#load {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/background.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+/* 背景旋轉 */
+#load .bg-spin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/background-round.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: rotateBg 5s linear infinite;
+    z-index: 0;
+}
+@keyframes rotateBg {
+    from {
+    transform: scale(1);
+    }
+    to {
+    transform: scale(1.5);
+    }
+}
+
+/* stick 動畫 */
+#load .stick {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: auto;
+    animation: stickMove 1s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* tube 動畫 */
+#load .tube {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: auto;
+    animation-delay: 500ms;
+    transform-origin: bottom center;
+    animation: tubeShake .9s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* tube 搖動動畫 keyframes */
+@keyframes tubeShake {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-50%) rotate(1.5deg); }
+    50% { transform: translateX(-50%) rotate(0deg); }
+    75% { transform: translateX(-50%) rotate(-1.5deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+/* stick 上下動畫 keyframes */
+@keyframes stickMove {
+    0% { transform: translate(-50%, 0); }
+    25% { transform: translate(-50%, -15px); }
+    50% { transform: translate(-50%, 0); }
+    75% { transform: translate(-50%, -10px); }
+    100% { transform: translate(-50%, 0); }
+}
+
+/* 避免被全域 img 干擾 */
+#load img {
+    width: auto !important;
+    height: auto !important;
+}
+/* 隱藏 loading */
+#load.none {
+    display: none;
+}
+/* ======================= */
+/* Media Query: 大螢幕全展示 */
+/* ======================= */
+@media only screen and (min-width: 834px) {
+    header.flex {
+        height: 35%;
+    }
+    main#home .box{
+        width: 100%;
+        max-width: none;
+        min-width: none;
+    }
+    main#home .box .full{
+        width: 100%;
+        justify-content: center;
+        transition: none;
+        /* padding: 10px; */
+        transform: translateX(0)!important;
+    }
+    main#home .box .full .item{
+        flex:0 0 auto;
+        width: clamp(100px, 30vw, 150px);
+        height: auto;
+        margin: 20px;
+    }
+    main#home .box #prev,main#home .box #next{
+        display: none;
+    }
+}
+@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1440px) {}
